@@ -31,4 +31,4 @@ USER odoo
 
 EXPOSE 10000
 
-CMD ["/bin/bash", "-c", "exec odoo --http-interface=0.0.0.0 --http-port=10000 --db_host=\"$DB_HOST\" --db_port=\"$DB_PORT\" --db_user=\"$DB_USER\" --db_password=\"$DB_PASSWORD\" --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons/queue,/mnt/extra-addons/partner-contact,/mnt/extra-addons/ems --load=web,queue_job --database=ems_db_x3hu --init=ems"]
+CMD ["/bin/bash", "-c", "exec odoo --http-interface=0.0.0.0 --http-port=10000 --db_host=\"$HOST\" --db_port=\"$PORT\" --db_user=\"$USER\" --db_password=\"$PASSWORD\" --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons/queue,/mnt/extra-addons/partner-contact,/mnt/extra-addons/ems --load=web,queue_job --database=ems_db_x3hu --init=ems"]
