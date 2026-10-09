@@ -29,9 +29,8 @@ RUN chown -R odoo:odoo /mnt/extra-addons
 
 USER odoo
 
-
 EXPOSE 10000
 
 ENTRYPOINT ["/bin/bash", "-c"]
 
-CMD ["exec odoo --http-interface=0.0.0.0 --http-port=\"${PORT:-10000}\" --db_host=\"$DB_HOST\" --db_port=\"${DB_PORT:-5432}\" --db_user=\"$DB_USER\" --db_password=\"$DB_PASSWORD\" --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons/queue,/mnt/extra-addons/partner-contact,/mnt/extra-addons/ems --load=web,queue_job --database=ems_db_x3hu --init=ems"]
+CMD ["exec odoo --http-interface=0.0.0.0 --http-port=\"${PORT:-10000}\" --db_host=\"$DB_HOST\" --db_port=\"${DB_PORT:-5432}\" --db_user=\"$DB_USER\" --db_password=\"$DB_PASSWORD\" --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons,/mnt/extra-addons/queue,/mnt/extra-addons/partner-contact --load=web,queue_job --database=ems_db_x3hu --init=ems"]
